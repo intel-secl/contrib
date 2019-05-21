@@ -3,7 +3,7 @@ MAVEN_REPOSITORY_PATH=${MAVEN_REPOSITORY_PATH:-"~/.m2/repository"}
 
 OPENSSL_VERSION="1.0.2a"
 OPENSSL="openssl-${OPENSSL_VERSION}"
-OPENSSL_URL="http://openssl.org/source/${OPENSSL}.tar.gz"
+OPENSSL_URL="https://www.openssl.org/source/old/1.0.2/${OPENSSL}.tar.gz"
 
 TROUSERS_VERSION="0.3.13"
 TROUSERS="trousers-${TROUSERS_VERSION}"
