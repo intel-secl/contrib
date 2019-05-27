@@ -50,13 +50,6 @@
             <type>zip</type>
             <classifier>${env.LINUX_TARGET}</classifier>
         </dependency>
-        <dependency>
-            <groupId>net.sourceforge.trousers</groupId>
-            <artifactId>trousers-dist</artifactId>
-            <version>0.3.13</version>
-            <type>zip</type>
-            <classifier>${env.LINUX_TARGET}</classifier>
-        </dependency>
     </dependencies>
     
 </project>
