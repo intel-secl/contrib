@@ -44,44 +44,9 @@
             <classifier>${env.LINUX_TARGET}</classifier>
         </dependency>
         <dependency>
-            <groupId>gov.niarl.tpm</groupId>
-            <artifactId>niarl-tpm-module-dist</artifactId>
-            <version>1.0</version>
-            <type>zip</type>
-            <classifier>${env.LINUX_TARGET}</classifier>
-        </dependency>
-        <dependency>
             <groupId>org.openssl</groupId>
             <artifactId>openssl-dist</artifactId>
             <version>1.0.2a</version>
-            <type>zip</type>
-            <classifier>${env.LINUX_TARGET}</classifier>
-        </dependency>
-        <dependency>
-            <groupId>net.sourceforge.tpmquotetools</groupId>
-            <artifactId>tpm-agent-tools-dist</artifactId>
-            <version>1.0</version>
-            <type>zip</type>
-            <classifier>${env.LINUX_TARGET}</classifier>
-        </dependency>
-        <dependency>
-            <groupId>net.sourceforge.tpmquotetools</groupId>
-            <artifactId>tpm-quote-tools-dist</artifactId>
-            <version>1.0.2</version>
-            <type>zip</type>
-            <classifier>${env.LINUX_TARGET}</classifier>
-        </dependency>
-        <dependency>
-            <groupId>net.sourceforge.trousers</groupId>
-            <artifactId>tpm-tools-dist</artifactId>
-            <version>1.3.8</version>
-            <type>zip</type>
-            <classifier>${env.LINUX_TARGET}</classifier>
-        </dependency>
-        <dependency>
-            <groupId>net.sourceforge.trousers</groupId>
-            <artifactId>trousers-dist</artifactId>
-            <version>0.3.13</version>
             <type>zip</type>
             <classifier>${env.LINUX_TARGET}</classifier>
         </dependency>
