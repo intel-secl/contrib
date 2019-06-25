@@ -14,7 +14,6 @@
     
     <modules>
         <module>hex2bin</module>
-        <module>openssl</module>
         <module>tboot</module>
     </modules>
 </project>

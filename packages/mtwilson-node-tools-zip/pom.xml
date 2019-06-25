@@ -43,13 +43,6 @@
             <type>zip</type>
             <classifier>${env.LINUX_TARGET}</classifier>
         </dependency>
-        <dependency>
-            <groupId>org.openssl</groupId>
-            <artifactId>openssl-dist</artifactId>
-            <version>1.0.2a</version>
-            <type>zip</type>
-            <classifier>${env.LINUX_TARGET}</classifier>
-        </dependency>
     </dependencies>
     
 </project>

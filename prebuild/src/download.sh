@@ -1,10 +1,6 @@
 #!/bin/bash
 MAVEN_REPOSITORY_PATH=${MAVEN_REPOSITORY_PATH:-"~/.m2/repository"}
 
-OPENSSL_VERSION="1.0.2a"
-OPENSSL="openssl-${OPENSSL_VERSION}"
-OPENSSL_URL="https://www.openssl.org/source/old/1.0.2/${OPENSSL}.tar.gz"
-
 TBOOT_VERSION="1.9.7"
 TBOOT="tboot-${TBOOT_VERSION}"
 TBOOT_URL="http://downloads.sourceforge.net/project/tboot/tboot/${TBOOT}.tar.gz"
@@ -45,21 +41,6 @@ maven_install() {
   mvn install:install-file -Dfile="${file_name}" -DgroupId="${group_id}" -DartifactId="${artifact_id}" -Dversion="${version}" -Dpackaging="${packaging}" -Dclassifier="${classifier}"
 }
 
-download_openssl() {
-  if [ ! -f "${OPENSSL}.tar.gz" ]; then
-    wget --no-check-certificate "${OPENSSL_URL}"
-  fi
-}
-maven_install_openssl() {
-  maven_install "${OPENSSL}.tar.gz" "org.openssl" "openssl" "${OPENSSL_VERSION}" "tgz" "sources"
-}
-download_and_maven_install_openssl() {
-  if [ ! -f "${MAVEN_REPOSITORY_PATH}/org/openssl/openssl/${OPENSSL_VERSION}/${OPENSSL}*.tgz" ]; then
-    download_openssl
-    maven_install_openssl
-  fi
-}
-
 download_tboot() {
   if [ ! -f "${TBOOT}.tar.gz" ]; then
     wget --no-check-certificate "${TBOOT_URL}"
@@ -79,9 +60,6 @@ download_and_maven_install_tboot() {
 echo "Downloading and installing prerequisites..."
 download_prerequisites
 if [ $? -ne 0 ]; then echo "Failed to install prerequisites through package manager"; exit 1; fi
-echo "Downloading and maven installing openssl..."
-download_and_maven_install_openssl
-if [ $? -ne 0 ]; then echo "Failed to download and maven install openssl"; exit 2; fi
 echo "Downloading and maven installing tboot..."
 download_and_maven_install_tboot
 if [ $? -ne 0 ]; then echo "Failed to download and maven install tboot"; exit 6; fi
