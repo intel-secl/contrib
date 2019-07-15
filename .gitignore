@@ -8,5 +8,3 @@ nb-configuration.xml
 ~*
 *.tmp
 *.log
-.idea
-*.iml
