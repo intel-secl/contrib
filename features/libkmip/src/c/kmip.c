@@ -6155,8 +6155,10 @@ kmip_compare_protection_storage_masks(const ProtectionStorageMasks *a, const Pro
             {
                 if(a_item != b_item)
                 {
-                    int32 a_data = *(int32 *)a_item->data;
-                    int32 b_data = *(int32 *)b_item->data;
+                    int32 a_data = 0;
+                    int32 b_data = 0;
+                    if (a_item) a_data = *(int32 *)a_item->data;
+                    if (b_item) b_data = *(int32 *)b_item->data;
                     if(a_data != b_data)
                     {
                         return(KMIP_FALSE);
@@ -6307,8 +6309,10 @@ kmip_compare_attributes(const Attributes *a, const Attributes *b)
             {
                 if(a_item != b_item)
                 {
-                    Attribute *a_data = (Attribute *)a_item->data;
-                    Attribute *b_data = (Attribute *)b_item->data;
+                    Attribute *a_data = NULL;
+                    Attribute *b_data = NULL;
+                    if (a_item) a_data = (Attribute *)a_item->data;
+                    if (b_item) b_data = (Attribute *)b_item->data;
                     if(kmip_compare_attribute(a_data, b_data) == KMIP_FALSE)
                     {
                         return(KMIP_FALSE);
