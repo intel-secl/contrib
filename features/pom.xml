@@ -15,6 +15,5 @@
     <modules>
         <module>hex2bin</module>
         <module>libkmip</module>
-        <module>tboot</module>
     </modules>
 </project>
